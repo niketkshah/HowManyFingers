@@ -10,6 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBAction func guessButton(sender: AnyObject) {
+        
+        
+        let diceroll = arc4random_uniform(6)
+        
+        print(diceroll)
+        if textField.text == "\(diceroll)"{
+            OutputLabel.text="You Guessed right!"
+            
+        }
+        else{
+            OutputLabel.text="Wrong! It was \(diceroll)"
+        }
+    }
+    
+    @IBOutlet var textField: UITextField!
+    
+    
+    
+    @IBOutlet var OutputLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
